@@ -6,12 +6,13 @@ const {
   reciepeDelete,
   addIngredientToRecipe,
 } = require("./recipes.controllers");
+const upload = require("../../multer");
 const router = express.Router();
 
 router.get("/", recipesGet);
-router.post("", recipesCreate);
-router.put("/:recipeId", reciepeUpdate);
+router.post("", upload.single("image"), recipesCreate);
+router.put("/:recipeId", upload.single("image"), reciepeUpdate);
 router.delete("/recipId", reciepeDelete);
-router.post("/:recipeId/add/:ingredientId", addIngredientToreciepe);
+router.post("/:recipeId/add/:ingredientId", addIngredientToRecipe);
 
 module.exports = router;

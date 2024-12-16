@@ -12,6 +12,7 @@ const RecipeSchema = new Schema({
       ref: "Ingredient",
     },
   ],
+  image: { type: String },
 });
 
 module.exports = model("Recipe", RecipeSchema);

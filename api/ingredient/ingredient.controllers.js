@@ -1,4 +1,4 @@
-const Ingredient = require("../../models/Ingredient");
+const Ingredient = require("../models/Ingredient");
 
 exports.ingredientGet = async (req, res) => {
   try {
